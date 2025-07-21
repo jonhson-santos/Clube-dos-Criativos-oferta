@@ -240,13 +240,21 @@ function App() {
                   <p className="text-gray-300 mb-8 text-sm leading-relaxed">
                     ({plan.description})
                   </p>
-                  <button className={`w-full py-4 px-6 rounded-lg font-bold text-sm transition-all duration-300 ${
+                  <a 
+                    href={
+                      plan.price === "R$9,97" ? "https://app.pushinpay.com.br/service/pay/9F70A9AC-55F6-4DF3-9990-008BF40FBBD0" :
+                      plan.price === "R$27" ? "https://app.pushinpay.com.br/service/pay/9F70AA3E-8419-49B0-9608-68323715CB23" :
+                      "https://app.pushinpay.com.br/service/pay/9F70AB2D-906B-4650-BEF3-1924A6D27AE2"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-full py-4 px-6 rounded-lg font-bold text-sm transition-all duration-300 ${
                     plan.popular 
                       ? 'bg-red-700 hover:bg-red-800 text-white' 
                       : 'bg-gray-800 hover:bg-gray-700 text-white'
-                  } hover:scale-105 hover:shadow-lg border-2 border-current`}>
+                  } hover:scale-105 hover:shadow-lg border-2 border-current block text-center`}>
                     {plan.button}
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
@@ -255,9 +263,14 @@ function App() {
 
         {/* Final Rejection Button */}
         <div className="text-center mb-16">
-          <button className="text-gray-500 hover:text-red-400 text-lg underline transition-colors duration-300 font-medium">
+          <a 
+            href="https://mente-blindada-21.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-red-400 text-lg underline transition-colors duration-300 font-medium"
+          >
             NÃO QUERO NADA — PREFIRO CONTINUAR NA MULTIDÃO
-          </button>
+          </a>
           <div className="mt-4 text-sm text-gray-600 max-w-2xl mx-auto">
             <p className="text-red-400 font-bold">
               ⚠️ Se sair agora, não tem volta.
